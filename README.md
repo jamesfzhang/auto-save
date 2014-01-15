@@ -1,7 +1,7 @@
-AutoSave
+Auto Save
 ===============
 A [Sublime Text 2](http://www.sublimetext.com/2) and
-[3](http://www.sublimetext.com/3) plugin that allows you to **automatically save your current file after every keystroke.**
+[3](http://www.sublimetext.com/3) plugin that allows you to **automatically save the current file after every keystroke.**
 
 - [Synopsis](#synopsis)
 - [Installation](#installation)
@@ -29,11 +29,11 @@ Go to the `Packages` directory under Sublime Text's data directory:
 
 OS X: `cd ~/Library/Application Support/Sublime Text 3/Packages`
 
-Then clone this repository: `git clone https://github.com/jamesfzhang/AutoSave.git`
+Then clone this repository: `git clone https://github.com/jamesfzhang/auto-save.git`
 
 Uage
 -------
-By default, AutoSave is disabled because it is a fairly invasive plugin.
+By default, Auto Save is disabled because it is a fairly invasive plugin.
 To enable it, you must do the first bind the command to turn the plugin
 on or off. Open "Preferences / Key Bindings - User" and add:
 
@@ -47,7 +47,7 @@ time the plugin is turned on or off.
 
 License
 -------
-[MIT-License](https://raw.github.com/jamesfzhang/AutoSave/master/MIT-License).
+[MIT-License](https://raw.github.com/jamesfzhang/auto-save/master/MIT-License).
 
 Author
 -------

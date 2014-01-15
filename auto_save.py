@@ -1,6 +1,6 @@
 '''
 Provides a convenient way to turn on and turn off
-automatically saving your files after every modification.
+automatically saving the current file after every modification.
 '''
 
 

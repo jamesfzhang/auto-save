@@ -2,7 +2,7 @@
 Thank you for installing Auto Save [v0.1.0]
 ----------------------------------------
 
-You're one step closer to having your files save after every modification!
+You're one step closer to having your files save automatically after every modification!
 
 
 Documentation
@@ -15,6 +15,6 @@ See links below for more help.
 
 Useful Links
 ============
-* Documentation & Code: https://github.com/jamesfzhang/AutoSave
-* Report issues: https://github.com/jamesfzhang/AutoSave/issues
+* Documentation & Code: https://github.com/jamesfzhang/auto-save
+* Report issues: https://github.com/jamesfzhang/auto-save/issues
 * Follow me on Twitter: @jamesfzhang
