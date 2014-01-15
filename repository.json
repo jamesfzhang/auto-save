@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0",
+  "packages": [
+  {
+    "details": "https://github.com/jamesfzhang/AutoSave",
+    "releases": [
+    {
+      "sublime_text": "*",
+      "details": "https://github.com/jamesfzhang/AutoSave/tags",
+      "readme": "https://raw.github.com/jamesfzhang/AutoSave/master/README.md"
+    }
+  ]
+}
