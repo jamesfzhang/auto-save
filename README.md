@@ -26,7 +26,8 @@ TODO.
 
 ### From Github
 Go to the `Packages` directory under Sublime Text's data directory:
-OS X: `~/Library/Application Support/Sublime Text 3/Packages`
+
+OS X: `cd ~/Library/Application Support/Sublime Text 3/Packages`
 
 Then clone this repository: `git clone https://github.com/jamesfzhang/AutoSave.git`
 
@@ -46,7 +47,7 @@ time the plugin is turned on or off.
 
 License
 -------
-[MIT-License](https://github.com/jamesfzhang/AutoSave/MIT-License).
+[MIT-License](https://raw.github.com/jamesfzhang/AutoSave/master/MIT-License).
 
 Author
 -------
