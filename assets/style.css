@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Code Pro', sans-serif;
+  padding: 0 2rem;
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+h2 {
+  font-weight: 400;
+  padding-top: 1rem;
+}
+
+section {
+  padding: 1rem 0;
+}
+
+.video {
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: .75rem 1.25rem;
+  margin: 0.25rem 0;
+  border: 1px solid #95a5a6;
+  font-weight: 400;
+  color: #95a5a6;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: 0.3s ease-in-out;
+      -ms-transition: 0.3s ease-in-out;
+       -o-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+footer {
+  width: 100%;
+  padding: 1rem 0;
+  font-weight: 400;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a:hover {
+  color: #95a5a6;
+}
+
+@media (min-width: 768px) {
+  header,
+  section,
+  footer {
+    padding: 2rem 0;
+  }
+
+  body {
+    width: 600px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
