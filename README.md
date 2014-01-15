@@ -1,7 +1,7 @@
-Trailing Spaces
+AutoSave
 ===============
 A [Sublime Text 2](http://www.sublimetext.com/2) and
-[3](http://www.sublimetext.com/3) plugin that allows you to **automatically save your current file after every modification.**
+[3](http://www.sublimetext.com/3) plugin that allows you to **automatically save your current file after every keystroke.**
 
 - [Synopsis](#synopsis)
 - [Installation](#installation)
@@ -12,11 +12,11 @@ A [Sublime Text 2](http://www.sublimetext.com/2) and
 Synopsis
 -------
 In the rare occasion where you'd want your Sublime Text file to save after
-each keystroke, you can now use this plugin. I wrote this plugin because
-I wanted to make a screencast that shows live editing of HTML along with
-the changes showing live in the browser. It's easy to use Javascript to
+each keystroke, you can now use this plugin. It was created because
+I wanted to make a screencast that shows live editing of HTML/CSS along side
+by side with the changes in the browser. It's easy to use Javascript to
 reload the browers every second, but I did not want to manually save the
-file after every keystroke. That's why this plugin was created.
+file after every keystroke.
 
 Installation
 -------
