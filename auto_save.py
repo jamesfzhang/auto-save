@@ -1,4 +1,6 @@
 '''
+AutoSave - Sublime Text Plugin
+
 Provides a convenient way to turn on and turn off
 automatically saving the current file after every modification.
 '''
@@ -27,7 +29,7 @@ class AutoSaveCommand(sublime_plugin.TextCommand):
 
     if settings.get("auto_save_on_modified"):
       settings.set("auto_save_on_modified", False)
-      sublime.status_message("Auto Save Turned Off")
+      sublime.status_message("AutoSave Turned Off")
     else:
       settings.set("auto_save_on_modified", True)
-      sublime.status_message("Auto Save Turned On")
+      sublime.status_message("AutoSave Turned On")

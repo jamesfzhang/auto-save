@@ -1,5 +1,5 @@
 
-Thank you for installing Auto Save [v0.1.0]
+Thank you for installing AutoSave [v0.1.0]
 ----------------------------------------
 
 You're one step closer to having your files save automatically after every modification!
