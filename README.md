@@ -1,9 +1,9 @@
 AutoSave
 ===============
-A [Sublime Text 2](http://www.sublimetext.com/2) and
-[3](http://www.sublimetext.com/3) plugin that allows you to **automatically save the current file after every keystroke.**
+A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every keystroke**.
 
 - [Synopsis](#synopsis)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -11,12 +11,17 @@ A [Sublime Text 2](http://www.sublimetext.com/2) and
 
 Synopsis
 -------
-In the rare occasion where you'd want your Sublime Text file to save after
-each keystroke, you can now use this plugin. It was created because
+In the occasion where you'd want Sublime Text to save the current file after
+each keystroke, you can use this plugin. It was created because
 I wanted to make a screencast that shows live editing of HTML/CSS along side
 by side with the changes in the browser. It's easy to use Javascript to
 reload the browers every second, but I did not want to manually save the
 file after every keystroke.
+
+Demo
+-------
+Here is a [screencast](http://jzhang.io/auto-save) of me editing HTML and CSS
+with the plugin.
 
 Installation
 -------
@@ -31,7 +36,7 @@ Mac: `cd ~/Library/Application Support/Sublime Text 3/Packages`
 
 Then clone this repository: `git clone https://github.com/jamesfzhang/auto-save.git`
 
-Uage
+Usage
 -------
 By default, AutoSave is disabled because it is a fairly invasive plugin.
 To enable it, you must do the first bind the command to turn the plugin
@@ -52,5 +57,5 @@ License
 Author
 -------
 AutoSave was created and maintained by [James Zhang](http://jzhang.io).
-Give him a shoutout at [@jamesfzhang](https://twitteri.com/jamesfzhang)
+Give him a shoutout at [@jamesfzhang](https://twitter.com/jamesfzhang)
 if you have comments or questions.
