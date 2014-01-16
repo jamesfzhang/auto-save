@@ -1,5 +1,5 @@
 
-Thank you for installing AutoSave [v0.1.0]
+Thank you for installing AutoSave
 ----------------------------------------
 
 You're one step closer to having your files save automatically after every modification!
@@ -8,9 +8,12 @@ You're one step closer to having your files save automatically after every modif
 Documentation
 =============
 The plugin is dead simple. When turned on, the current file you are viewing will
-save automatically as you modify. In other words, the file is saved on every keystroke.
+save automatically as you modify it. In other words, the file saves after every keystroke.
 The plugin is turned off by default since it is so invasive. You may enable it by adding
-a key binding to the "auto_save" command in "Preferences / Key Bindings - User".
+a key binding to the "auto_save" command in "Preferences / Key Bindings - User", for example:
+
+{ "keys": ["ctrl+shift+s"], "command": "auto_save" }
+
 See links below for more help.
 
 Useful Links
