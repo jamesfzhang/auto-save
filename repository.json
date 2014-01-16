@@ -2,7 +2,6 @@
   "schema_version": "2.0",
   "packages": [
     {
-      "name": "AutoSave",
       "details": "https://github.com/jamesfzhang/auto-save",
       "releases": [
         {
