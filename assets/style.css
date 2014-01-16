@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,9 +11,9 @@ html {
 
 body {
   font-family: 'Source Code Pro', sans-serif;
-  padding: 0 2rem;
   background-color: #000;
-  color: #fff;
+  color: #eff1f5;
+  padding: 0 2rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -21,7 +23,7 @@ header {
 }
 
 h1 {
-  font-weight: 200;
+  font-weight: 600;
 }
 
 h2 {
@@ -42,9 +44,9 @@ section {
   width: 200px;
   padding: .75rem 1.25rem;
   margin: 0.25rem 0;
-  border: 1px solid #95a5a6;
-  font-weight: 400;
-  color: #95a5a6;
+  border: 1px solid #96b5b4;
+  font-weight: 600;
+  color: #96b5b4;
   text-decoration: none;
   text-align: center;
   -webkit-transition: 0.3s ease-in-out;
@@ -54,19 +56,19 @@ section {
 }
 
 .button:hover {
-  border-color: #fff;
-  color: #fff;
+  border-color: #eff1f5;
+  color: #eff1f5;
 }
 
 footer {
   width: 100%;
   padding: 1rem 0;
-  font-weight: 400;
 }
 
 footer a {
   text-decoration: none;
-  color: #fff;
+  font-weight: 600;
+  color: #eff1f5;
   -webkit-transition: 0.3s ease-in-out;
       -ms-transition: 0.3s ease-in-out;
        -o-transition: 0.3s ease-in-out;
@@ -74,7 +76,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #95a5a6;
+  color: #96b5b4;
 }
 
 @media (min-width: 768px) {
@@ -82,10 +84,6 @@ footer a:hover {
   section,
   footer {
     padding: 2rem 0;
-  }
-
-  body {
-    width: 600px;
   }
 
   h1 {
