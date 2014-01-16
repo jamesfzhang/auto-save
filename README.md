@@ -25,16 +25,20 @@ with the plugin.
 
 Installation
 -------
+#### From Package Control
+AutoSave is available through [Sublime Package Control](https://sublime.wbond.net/)
+and is the recommended way to install.
 
-### From Package Control
-TODO.
+#### From Github
+Alternatively, you may install via GitHub by cloning this repository into the `Packages`
+directory under Sublime Text's data directory:
 
-### From Github
-Go to the `Packages` directory under Sublime Text's data directory:
+On Mac:
 
-Mac: `cd ~/Library/Application Support/Sublime Text 3/Packages`
-
-Then clone this repository: `git clone https://github.com/jamesfzhang/auto-save.git`
+```
+cd ~/Library/Application Support/Sublime Text 3/Packages
+git clone https://github.com/jamesfzhang/auto-save.git
+```
 
 Usage
 -------
