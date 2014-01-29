@@ -20,7 +20,7 @@ file after every keystroke.
 
 Demo
 -------
-Here is a [screencast](http://jzhang.io/auto-save) of me editing HTML and CSS
+Here is a [screencast](https://jz.wistia.com/medias/c1lgjwytbz) of me editing HTML and CSS
 with the plugin.
 
 Installation
