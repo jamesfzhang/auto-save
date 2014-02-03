@@ -18,7 +18,7 @@ class AutoSaveListener(sublime_plugin.EventListener):
   def on_modified(self, view):
     settings = sublime.load_settings(auto_save_settings_filename)
 
-    if settings.get("auto_save_on_modified"):
+    if settings.get("auto_save_on_modified") and view.file_name():
       view.run_command("save")
 
 
