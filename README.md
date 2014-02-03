@@ -43,7 +43,7 @@ git clone https://github.com/jamesfzhang/auto-save.git
 Usage
 -------
 By default, AutoSave is disabled because it is a fairly invasive plugin.
-To enable it, you must do the first bind the command to turn the plugin
+To enable it, you must first bind the command to turn the plugin
 on or off. Open "Preferences / Key Bindings - User" and add:
 
 ```js
