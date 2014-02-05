@@ -1,4 +1,4 @@
-AutoSave
+auto-save
 ===============
 A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every keystroke**.
 
@@ -42,7 +42,7 @@ git clone https://github.com/jamesfzhang/auto-save.git
 
 Usage
 -------
-By default, AutoSave is disabled because it is a fairly invasive plugin.
+**By default, auto-save is disabled** because it is a fairly invasive plugin.
 To enable it, you must first bind the command to turn the plugin
 on or off. Open "Preferences / Key Bindings - User" and add:
 
@@ -60,6 +60,6 @@ License
 
 Author
 -------
-AutoSave was created and maintained by [James Zhang](http://jzhang.io).
+auto-save was created and maintained by [James Zhang](http://jzhang.io).
 Give him a shoutout at [@jamesfzhang](https://twitter.com/jamesfzhang)
 if you have comments or questions.
