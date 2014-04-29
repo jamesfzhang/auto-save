@@ -1,6 +1,6 @@
 auto-save
 ===============
-A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every keystroke**.
+A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every modification**.
 
 - [Synopsis](#synopsis)
 - [Demo](#demo)
@@ -12,11 +12,7 @@ A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves 
 Synopsis
 -------
 In the occasion where you'd want Sublime Text to save the current file after
-each keystroke, you can use this plugin. It was created because
-I wanted to make a screencast that shows live editing of HTML/CSS along side
-by side with the changes in the browser. It's easy to use Javascript to
-reload the browers every second, but I did not want to manually save the
-file after every keystroke.
+each change, you can use this plugin.
 
 Demo
 -------
@@ -26,7 +22,7 @@ with the plugin.
 Installation
 -------
 #### From Package Control
-AutoSave is available through [Sublime Package Control](https://sublime.wbond.net/)
+AutoSave is available through [Sublime Package Control](https://sublime.wbond.net/packages/auto-save)
 and is the recommended way to install.
 
 #### From Github
@@ -53,6 +49,9 @@ on or off. Open "Preferences / Key Bindings - User" and add:
 With this setting, pressing <kbd>Ctrl + Shift + S</kbd> will turn the plugin
 on or off. A status message will be displayed in the Sublime Status Bar each
 time the plugin is turned on or off.
+
+By default, auto-save debounces "save" events by 1 second. For fast typers, this improves
+performance dramatically such that "save" events are not called constantly, just when it matters.
 
 License
 -------

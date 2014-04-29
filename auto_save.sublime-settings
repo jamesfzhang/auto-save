@@ -1,5 +1,6 @@
 // AutoSave's default settings.
 
 {
-  "auto_save_on_modified": false
+  "auto_save_on_modified": false,
+  "auto_save_delay_in_seconds": 1
 }

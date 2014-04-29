@@ -1,0 +1,7 @@
+Improvements:
+
+* Debounce save to improve performance dramatically.
+  - New setting called "auto_save_delay_in_seconds", which defaults to 1.
+  - The higher this number, the longer "save" is debounced.
+  - Anywhere between 1-3 seconds is reasonable.
+  - Set to 0 to avoid debouncing all together (not recommended).
