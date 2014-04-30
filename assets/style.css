@@ -1,110 +1,65 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
-
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:600);
 
 html {
-  height: 100%;
+  font-size: 62.5%;
 }
 
 body {
-  font-family: 'Source Code Pro', sans-serif;
-  background-color: #000;
-  color: #eff1f5;
-  padding: 0 2rem;
-  -webkit-font-smoothing: antialiased;
-}
-
-header {
-  width: 100%;
-  padding: 1rem 0;
-}
-
-h1 {
-  font-weight: 600;
-}
-
-h2 {
+  margin: 0 auto;
+  color: #000;
+  background: transparent;
+  font-family: "Cardo", serif;
+  font-size: 1.6rem;
   font-weight: 400;
-  padding-top: 1rem;
 }
 
-section {
-  padding: 1rem 0;
+* {
+  -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+
+       -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+               box-sizing: border-box;
+
+          -webkit-touch-callout: none;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
 }
 
-.video {
-  width: 100%;
-}
-
-.button {
-  display: inline-block;
-  width: 200px;
-  padding: .75rem 1.25rem;
-  margin: 0.25rem 0;
-  border: 1px solid #96b5b4;
-  font-weight: 600;
-  color: #96b5b4;
+a {
+  color: #000;
   text-decoration: none;
-  text-align: center;
-  -webkit-transition: 0.3s ease-in-out;
-      -ms-transition: 0.3s ease-in-out;
-       -o-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
+  border-bottom: 1px solid #000;
 }
 
-.button:hover {
-  border-color: #eff1f5;
-  color: #eff1f5;
+header, .demo, footer {
+  max-width: 50rem
+  margin: 0;
+  padding: 2rem;
 }
 
-footer {
-  width: 100%;
-  padding: 1rem 0;
+.demo img {
+  max-width: 50rem;
 }
 
-footer a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #eff1f5;
-  -webkit-transition: 0.3s ease-in-out;
-      -ms-transition: 0.3s ease-in-out;
-       -o-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3rem;
 }
 
-footer a:hover {
-  color: #96b5b4;
+header h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
 }
 
-@media (min-width: 768px) {
-  header,
-  section,
-  footer {
-    padding: 2rem 0;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    width: 100%;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
+header hgroup {
+  margin: 2rem 0;
 }
