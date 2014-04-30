@@ -16,8 +16,7 @@ each change, you can use this plugin.
 
 Demo
 -------
-Here is a [screencast](http://jzhang.io/auto-save) of me editing HTML and CSS
-with the plugin.
+![Image](https://github.com/jamesfzhang/auto-save/blob/master/demo.gif?raw=true)
 
 Installation
 -------
