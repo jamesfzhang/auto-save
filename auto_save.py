@@ -24,8 +24,6 @@ class AutoSaveListener(sublime_plugin.EventListener):
     settings = sublime.load_settings(settings_filename)
     delay = settings.get(delay_field)
 
-    AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
-
 
     '''
     If the queue is longer than 1, pop the last item off,
@@ -39,11 +37,9 @@ class AutoSaveListener(sublime_plugin.EventListener):
         AutoSaveListener.save_queue = []
 
 
-    '''
-    Debounce save by the specified delay.
-    '''
     if settings.get(on_modified_field) and view.file_name():
-      Timer(delay, debounce_save).start()
+      AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
+      Timer(delay, debounce_save).start() # Debounce save by the specified delay.
 
 
 class AutoSaveCommand(sublime_plugin.TextCommand):

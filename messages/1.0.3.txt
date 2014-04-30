@@ -1,0 +1,4 @@
+Fixes:
+
+* Fixed bug where turning on/off resulted in plugin breaking.
+* Thanks for reporting the issue, https://github.com/fertingoff
