@@ -1,4 +1,4 @@
-auto-save
+[auto-save](http://jzhang.io/auto-save)
 ===============
 A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every modification**.
 
