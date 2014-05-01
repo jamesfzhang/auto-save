@@ -21,7 +21,7 @@ Demo
 Installation
 -------
 #### From Package Control
-AutoSave is available through [Sublime Package Control](https://sublime.wbond.net/packages/auto-save)
+auto-save is available through [Sublime Package Control](https://sublime.wbond.net/packages/auto-save)
 and is the recommended way to install.
 
 #### From Github
