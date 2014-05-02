@@ -1,0 +1,4 @@
+Fixes:
+
+* Fixed bug where plugin was broken for ST2.
+* Thanks for reporting the issue and fixing it https://github.com/mateuszjarzewski
