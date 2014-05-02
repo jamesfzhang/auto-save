@@ -23,7 +23,9 @@ class AutoSaveListener(sublime_plugin.EventListener):
   def on_modified(self, view):
     settings = sublime.load_settings(settings_filename)
     delay = settings.get(delay_field)
-
+    
+    def callback():
+      view.run_command("save")
 
     '''
     If the queue is longer than 1, pop the last item off,
@@ -33,7 +35,8 @@ class AutoSaveListener(sublime_plugin.EventListener):
       if len(AutoSaveListener.save_queue) > 1:
         AutoSaveListener.save_queue.pop()
       else:
-        view.run_command("save")
+        # view.run_command("save")
+        sublime.set_timeout(callback, 0)
         AutoSaveListener.save_queue = []
 
 
