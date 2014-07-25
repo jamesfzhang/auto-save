@@ -11,7 +11,7 @@ import sublime_plugin
 from threading import Timer
 
 
-settings_filename = "auto_save.sublime-settings"
+settings_filename = "Preferences.sublime-settings"
 on_modified_field = "auto_save_on_modified"
 delay_field = "auto_save_delay_in_seconds"
 
