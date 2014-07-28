@@ -52,13 +52,6 @@ time the plugin is turned on or off.
 By default, auto-save debounces "save" events by 1 second. For fast typers, this improves
 performance dramatically such that "save" events are not called constantly, just when it matters.
 
--You can change the plugin options by adding those 2 lines to your user pref file ,
-("auto_save_on_modified": true) make the plugin works automatically without the need for the shortcut key.
-<pre>
-"auto_save_on_modified": true,
-"auto_save_delay_in_seconds": 1,
-</pre>
-
 License
 -------
 [MIT-License](https://raw.github.com/jamesfzhang/auto-save/master/MIT-License).
