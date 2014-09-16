@@ -44,6 +44,7 @@ on or off. Open "Preferences / Key Bindings - User" and add:
 ```js
 { "keys": ["ctrl+shift+s"], "command": "auto_save" }
 ```
+This key bindings file takes an array of key bindings so please ensure that this key binding, along with any existing ones, are properly wrapped in `[]`.
 
 With this setting, pressing <kbd>Ctrl + Shift + S</kbd> will turn the plugin
 on or off. A status message will be displayed in the Sublime Status Bar each
