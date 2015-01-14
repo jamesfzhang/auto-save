@@ -1,4 +1,4 @@
-[auto-save](http://jzhang.io/auto-save)
+auto-save
 ===============
 A [Sublime Text](http://www.sublimetext.com/) plugin that **automatically saves the current file after every modification**.
 
@@ -59,6 +59,5 @@ License
 
 Author
 -------
-auto-save was created and maintained by [James Zhang](http://jzhang.io).
-Give him a shoutout at [@jamesfzhang](https://twitter.com/jamesfzhang)
+auto-save was created and maintained by James Zhang. Give him a shoutout at [@jamesfzhang](https://twitter.com/jamesfzhang)
 if you have comments or questions.
