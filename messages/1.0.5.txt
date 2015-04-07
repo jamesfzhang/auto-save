@@ -1,0 +1,3 @@
+Fixes:
+
+* Fixed bug when file is reloaded from disk (thanks https://github.com/scholer)
