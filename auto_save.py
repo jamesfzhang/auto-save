@@ -29,7 +29,11 @@ class AutoSaveListener(sublime_plugin.EventListener):
     Must use this callback for ST2 compatibility
     '''
     def callback():
-      view.run_command("save")
+      if view.is_dirty() and not view.is_loading():
+          view.run_command("save")
+      else:
+        print("Auto-save callback invoked, but view is",
+              "currently loading." if view.is_loading() else "unchanged from disk.")
 
 
     '''
@@ -44,7 +48,7 @@ class AutoSaveListener(sublime_plugin.EventListener):
         AutoSaveListener.save_queue = []
 
 
-    if settings.get(on_modified_field) and view.file_name():
+    if settings.get(on_modified_field) and view.file_name() and view.is_dirty():
       AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
       Timer(delay, debounce_save).start() # Debounce save by the specified delay.
 
