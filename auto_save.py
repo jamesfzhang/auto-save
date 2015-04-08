@@ -30,7 +30,7 @@ class AutoSaveListener(sublime_plugin.EventListener):
     '''
     def callback():
       if view.is_dirty() and not view.is_loading():
-          view.run_command("save")
+        view.run_command("save")
       else:
         print("Auto-save callback invoked, but view is",
               "currently loading." if view.is_loading() else "unchanged from disk.")
