@@ -1,0 +1,3 @@
+Improvements:
+
+* Add explicit enable/disable flag in addition to toggle (thanks https://github.com/scholer)
