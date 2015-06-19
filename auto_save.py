@@ -22,6 +22,9 @@ class AutoSaveListener(sublime_plugin.EventListener):
 
   def on_modified(self, view):
     settings = sublime.load_settings(settings_filename)
+    if not (settings.get(on_modified_field) and view.file_name() and view.is_dirty()):
+      return
+
     delay = settings.get(delay_field)
 
 
@@ -48,9 +51,8 @@ class AutoSaveListener(sublime_plugin.EventListener):
         AutoSaveListener.save_queue = []
 
 
-    if settings.get(on_modified_field) and view.file_name() and view.is_dirty():
-      AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
-      Timer(delay, debounce_save).start() # Debounce save by the specified delay.
+    AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
+    Timer(delay, debounce_save).start() # Debounce save by the specified delay.
 
 
 class AutoSaveCommand(sublime_plugin.TextCommand):
