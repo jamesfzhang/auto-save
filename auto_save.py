@@ -55,12 +55,14 @@ class AutoSaveListener(sublime_plugin.EventListener):
 
 class AutoSaveCommand(sublime_plugin.TextCommand):
 
-  def run(self, view):
+  def run(self, view, enable=None):
+    '''
+    Toggle auto-save on and off. Can be bound to a keystroke, e.g. ctrl+alt+s.
+    If enable argument is given, auto save will be enabled (if True) or disabled (if False).
+    If enable is not provided, auto save will be toggled (on if currently off and vice versa).
+    '''
     settings = sublime.load_settings(settings_filename)
-
-    if settings.get(on_modified_field):
-      settings.set(on_modified_field, False)
-      sublime.status_message("AutoSave Turned Off")
-    else:
-      settings.set(on_modified_field, True)
-      sublime.status_message("AutoSave Turned On")
+    if enable is None: # toggle
+      enable = not settings.get(on_modified_field)
+    settings.set(on_modified_field, enable)
+    sublime.status_message("AutoSave Turned %s" % ("On" if enable else "Off"))
