@@ -25,10 +25,10 @@ class AutoSaveListener(sublime_plugin.EventListener):
     delay = settings.get(delay_field)
 
 
-    '''
-    Must use this callback for ST2 compatibility
-    '''
     def callback():
+      '''
+      Must use this callback for ST2 compatibility
+      '''
       if view.is_dirty() and not view.is_loading():
         view.run_command("save")
       else:
@@ -36,11 +36,11 @@ class AutoSaveListener(sublime_plugin.EventListener):
               "currently loading." if view.is_loading() else "unchanged from disk.")
 
 
-    '''
-    If the queue is longer than 1, pop the last item off,
-    Otherwise save and reset the queue.
-    '''
     def debounce_save():
+      '''
+      If the queue is longer than 1, pop the last item off,
+      Otherwise save and reset the queue.
+      '''
       if len(AutoSaveListener.save_queue) > 1:
         AutoSaveListener.save_queue.pop()
       else:
