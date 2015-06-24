@@ -55,9 +55,9 @@ class AutoSaveListener(sublime_plugin.EventListener):
     Timer(delay, debounce_save).start() # Debounce save by the specified delay.
 
 
-class AutoSaveCommand(sublime_plugin.TextCommand):
+class AutoSaveCommand(sublime_plugin.ApplicationCommand):
 
-  def run(self, view, enable=None):
+  def run(self, enable=None):
     '''
     Toggle auto-save on and off. Can be bound to a keystroke, e.g. ctrl+alt+s.
     If enable argument is given, auto save will be enabled (if True) or disabled (if False).
