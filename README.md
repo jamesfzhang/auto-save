@@ -37,13 +37,28 @@ git clone https://github.com/jamesfzhang/auto-save.git
 
 Usage
 -------
-**By default, auto-save is disabled** because it is a fairly invasive plugin.
-To enable it, you must first bind the command to turn the plugin
-on or off. Open "Preferences / Key Bindings - User" and add:
+**By default, auto-save is disabled** because it is a fairly invasive plugin. To make it less invasive, you can instruct it to only auto-save changes to the file that is active when you turn on auto-save. In this mode, it will ignore changes to all other files.
+
+You can also instruct it to auto-backup the file instead of auto-saving it. The backup gets created in the same directory as its source file. The backup file takes the same name as its source file, with the string `.autosave` inserted directly before the file extension.
+
+There are two ways to enable it. You can press <kbd>Command + Shift + P</kbd> to bring up the Command Palette, and search for **AutoSave**. Here, there are 3 options:
+
+- Toggle AutoSave: all files
+- Toggle AutoSave: current file only
+- Toggle AutoSave Backup: current file only
+
+Alternatively, you can bind commands to turn the plugin or off. For example, to toggle auto-save for all files, open "Preferences / Key Bindings - User" and add:
 
 ```js
 { "keys": ["ctrl+shift+s"], "command": "auto_save" }
 ```
+
+To toggle it for only the current file, and instruct to make a backup of the file instead of saving the file itself, you could add:
+
+```js
+{ "keys": ["ctrl+shift+s"], "command": "auto_save", "args": {"all_files": false, "backup": true} }
+```
+
 This key bindings file takes an array of key bindings so please ensure that this key binding, along with any existing ones, are properly wrapped in `[]`.
 
 With this setting, pressing <kbd>Ctrl + Shift + S</kbd> will turn the plugin
