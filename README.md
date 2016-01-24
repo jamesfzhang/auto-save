@@ -47,7 +47,7 @@ There are two ways to enable it. You can press <kbd>Command + Shift + P</kbd> to
 - Toggle AutoSave: current file only
 - Toggle AutoSave Backup: current file only
 
-Alternatively, you can bind commands to turn the plugin or off. For example, to toggle auto-save for all files, open "Preferences / Key Bindings - User" and add:
+Alternatively, you can bind commands to turn the plugin on or off. For example, to toggle auto-save for all files, open "Preferences / Key Bindings - User" and add:
 
 ```js
 { "keys": ["ctrl+shift+s"], "command": "auto_save" }
