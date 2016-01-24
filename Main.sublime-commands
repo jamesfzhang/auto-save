@@ -1,0 +1,5 @@
+[
+  { "caption": "Toggle AutoSave: all files", "command": "auto_save" },
+  { "caption": "Toggle AutoSave: current file only", "command": "auto_save", "args": {"all_files": false} },
+  { "caption": "Toggle AutoSave Backup: current file only", "command": "auto_save", "args": {"all_files": false, "backup": true} }
+]
