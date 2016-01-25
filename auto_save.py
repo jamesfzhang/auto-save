@@ -20,6 +20,8 @@ current_file_field = "auto_save_current_file"
 backup_field = "auto_save_backup"
 backup_suffix_field = "auto_save_backup_suffix"
 
+
+
 class AutoSaveListener(sublime_plugin.EventListener):
 
   save_queue = [] # Save queue for on_modified events.
@@ -59,9 +61,14 @@ class AutoSaveListener(sublime_plugin.EventListener):
           view.run_command("save")
         else: # Save backup file
           content = view.substr(sublime.Region(0, view.size()))
-          with open(AutoSaveListener.generate_backup_filename(
-            view.file_name(), backup_suffix), 'w') as f:
-            f.write(content)
+          try:
+            with open(AutoSaveListener.generate_backup_filename(
+              view.file_name(), backup_suffix), 'w', encoding='utf-8') as f:
+              f.write(content)
+          except Exception as e:
+            sublime.status_message(e)
+            raise e
+
       else:
         print("Auto-save callback invoked, but view is",
               "currently loading." if view.is_loading() else "unchanged from disk.")
