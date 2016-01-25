@@ -1,0 +1,6 @@
+Improvements:
+
+* Add option for enabling this plugin for only current file
+* Add option for enabling "auto backup"
+
+See [this pull request](https://github.com/jamesfzhang/auto-save/pull/26) for more information. Thanks [kylebebak](https://github.com/kylebebak)!
