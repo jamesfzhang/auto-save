@@ -24,6 +24,17 @@ class AutoSaveListener(sublime_plugin.EventListener):
 
   save_queue = [] # Save queue for on_modified events.
 
+  @staticmethod
+  def generate_backup_filename(filename, backup_suffix):
+    dirname, basename = [os.path.dirname(filename),
+      os.path.basename(filename).split('.')]
+    if len(basename) > 1:
+      basename.insert(-1, backup_suffix)
+    else:
+      basename.append(backup_suffix)
+    return dirname + '/' + '.'.join(basename)
+
+
   def on_modified(self, view):
     settings = sublime.load_settings(settings_filename)
     if not (settings.get(on_modified_field) and view.file_name() and view.is_dirty()):
@@ -36,7 +47,7 @@ class AutoSaveListener(sublime_plugin.EventListener):
     backup_suffix = settings.get(backup_suffix_field)
 
     if not all_files and current_file != view.file_name():
-        return
+      return
 
 
     def callback():
@@ -45,11 +56,12 @@ class AutoSaveListener(sublime_plugin.EventListener):
       '''
       if view.is_dirty() and not view.is_loading():
         if not backup: # Save file
-            view.run_command("save")
+          view.run_command("save")
         else: # Save backup file
-            content = view.substr(sublime.Region(0, view.size()))
-            with open(generate_filename(), 'w') as f:
-                f.write(content)
+          content = view.substr(sublime.Region(0, view.size()))
+          with open(AutoSaveListener.generate_backup_filename(
+            view.file_name(), backup_suffix), 'w') as f:
+            f.write(content)
       else:
         print("Auto-save callback invoked, but view is",
               "currently loading." if view.is_loading() else "unchanged from disk.")
@@ -67,18 +79,10 @@ class AutoSaveListener(sublime_plugin.EventListener):
         AutoSaveListener.save_queue = []
 
 
-    def generate_filename():
-        fullname = view.file_name()
-        dirname, basename = os.path.dirname(fullname), os.path.basename(fullname).split('.')
-        if len(basename) > 1:
-            basename.insert(-1, backup_suffix)
-        else:
-            basename.append(backup_suffix)
-        return dirname + '/' + '.'.join(basename)
-
-
     AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
     Timer(delay, debounce_save).start() # Debounce save by the specified delay.
+
+
 
 
 class AutoSaveCommand(sublime_plugin.ApplicationCommand):
@@ -96,16 +100,25 @@ class AutoSaveCommand(sublime_plugin.ApplicationCommand):
     settings = sublime.load_settings(settings_filename)
     if enable is None: # toggle
       enable = not settings.get(on_modified_field)
+
+    if not enable:
+      message = "AutoSave Turned Off"
+      filename = settings.get(current_file_field)
+      if settings.get(backup_field) and filename: # Delete backup file
+        try:
+          os.remove(AutoSaveListener.generate_backup_filename(
+            filename, settings.get(backup_suffix_field)))
+        except:
+          pass
+
     settings.set(on_modified_field, enable)
     settings.set(all_files_field, all_files)
     filename = sublime.Window.active_view(sublime.active_window()).file_name()
     settings.set(current_file_field, filename)
     settings.set(backup_field, backup)
 
-    if not enable:
-        message = "AutoSave Turned Off"
-    else:
-        message = "AutoSave %sTurned On" % ("Backup " if backup else "")
-        if not all_files:
-            message += " for: " + os.path.basename(filename)
+    if enable:
+      message = "AutoSave %sTurned On" % ("Backup " if backup else "")
+      if not all_files:
+        message += " for: " + os.path.basename(filename)
     sublime.status_message(message)
