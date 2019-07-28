@@ -1,0 +1,4 @@
+Improvements:
+
+* Add option for ignoring files
+* Don't save when auto-complete menu is open--otherwise, the menu closes unexpectedly

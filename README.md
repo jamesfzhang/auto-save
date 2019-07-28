@@ -39,6 +39,8 @@ Usage
 -------
 **By default, auto-save is disabled** because it is a fairly invasive plugin. To make it less invasive, you can instruct it to only auto-save changes to the file that is active when you turn on auto-save. In this mode, it will ignore changes to all other files.
 
+To run auto-save whenever a file is modified, set `"auto_save_on_modified": true` in your user settings. To ignore certain files, set `auto_save_ignore_files` to a list of file suffices like `[".yml", "package.json"]`.
+
 You can also instruct it to auto-backup the file instead of auto-saving it. The backup gets created in the same directory as its source file. The backup file takes the same name as its source file, with the string `.autosave` inserted directly before the file extension. When auto-save is disabled, the backup file is deleted.
 
 There are two ways to enable it. You can press <kbd>Command + Shift + P</kbd> to bring up the Command Palette, and search for **AutoSave**. Here, there are 3 options:

@@ -17,9 +17,9 @@ on_modified_field = "auto_save_on_modified"
 delay_field = "auto_save_delay_in_seconds"
 all_files_field = "auto_save_all_files"
 current_file_field = "auto_save_current_file"
+ignore_files_field = "auto_save_ignore_files"
 backup_field = "auto_save_backup"
 backup_suffix_field = "auto_save_backup_suffix"
-
 
 
 class AutoSaveListener(sublime_plugin.EventListener):
@@ -39,16 +39,19 @@ class AutoSaveListener(sublime_plugin.EventListener):
 
   def on_modified(self, view):
     settings = sublime.load_settings(settings_filename)
-    if not (settings.get(on_modified_field) and view.file_name() and view.is_dirty()):
+    filename = view.file_name()
+
+    if view.is_auto_complete_visible():
       return
 
-    delay = settings.get(delay_field)
-    all_files = settings.get(all_files_field)
-    current_file = settings.get(current_file_field)
-    backup = settings.get(backup_field)
-    backup_suffix = settings.get(backup_suffix_field)
+    if not (settings.get(on_modified_field) and filename and view.is_dirty()):
+      return
 
-    if not all_files and current_file != view.file_name():
+    for path in settings.get(ignore_files_field):
+      if filename.endswith(path):
+        return
+
+    if not settings.get(all_files_field) and settings.get(current_file_field) != filename:
       return
 
 
@@ -56,22 +59,18 @@ class AutoSaveListener(sublime_plugin.EventListener):
       '''
       Must use this callback for ST2 compatibility
       '''
-      if view.is_dirty() and not view.is_loading():
-        if not backup: # Save file
+      if view.is_dirty() and not view.is_loading() and not view.is_auto_complete_visible():
+        if not settings.get(backup_field): # Save file
           view.run_command("save")
         else: # Save backup file
           content = view.substr(sublime.Region(0, view.size()))
           try:
             with open(AutoSaveListener.generate_backup_filename(
-              view.file_name(), backup_suffix), 'w', encoding='utf-8') as f:
+              view.file_name(), settings.get(backup_suffix_field)), 'w', encoding='utf-8') as f:
               f.write(content)
           except Exception as e:
             sublime.status_message(e)
             raise e
-
-      else:
-        print("Auto-save callback invoked, but view is",
-              "currently loading." if view.is_loading() else "unchanged from disk.")
 
 
     def debounce_save():
@@ -87,7 +86,7 @@ class AutoSaveListener(sublime_plugin.EventListener):
 
 
     AutoSaveListener.save_queue.append(0) # Append to queue for every on_modified event.
-    Timer(delay, debounce_save).start() # Debounce save by the specified delay.
+    Timer(settings.get(delay_field), debounce_save).start() # Debounce save by the specified delay.
 
 
 
